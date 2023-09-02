@@ -60,18 +60,16 @@ asmFunc:
     movs r1,1
     rsbs r2,r1,0
 
-    /* Start of Lab 3 Quiz Section */
+     /* Start of Lab 3 Quiz Section */
     subs r0,r0,r0  /* STUDENTS! Set a breakpoint at this line! */
     subs r2,r2,r2
-    adds r1, r0, 1
+    adds r1, r0, 5
     rsbs r2,r1,0
-    mov  r2, 0x2A
-    movs r2, 0x2A
-    ldr r3,=0x80000000
+    mov  r2, 0
+    movs r2, 0
+    movs r3, 0x80000000
     adds r4, r3, r3  
-    adds r1, r1, r1 
-    
-        
+       
     /* restore the caller's registers, as required by the 
      * ARM calling convention 
      */

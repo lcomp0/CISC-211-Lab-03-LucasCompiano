@@ -54,8 +54,12 @@ static volatile bool isUSARTTxComplete = true;
 static uint8_t uartTxBuffer[MAX_PRINT_LEN] = {0};
 
 // Test cases for testing func that adds two numbers
-static int32_t inp1Array[] = {  1, 24,  3, -100};
-static int32_t inp2Array[] = {  7, 12, 39,    1};
+// static int32_t inp1Array[] = {  1, 24,  3, -100};
+// static int32_t inp2Array[] = {  7, 12, 39,    1};
+
+// for Lab 3 we only need to execute asmFunc once!
+static int32_t inp1Array[] = {  1 };
+static int32_t inp2Array[] = {  7 };
 
 static char * pass = "PASS";
 static char * fail = "FAIL";
@@ -227,6 +231,9 @@ int main ( void )
             // !!!! THIS IS WHERE YOUR ASSEMBLY LANGUAGE PROGRAM GETS CALLED!!!!
             // Call our assembly function defined in file asmFunc.s
             result = asmFunc(inp1, inp2);
+            
+            // for Lab 3 we only need to execute asmFunc once!
+            return ( EXIT_FAILURE );
             
             // test the result and see if it passed
             failCount = testResult(testCase,inp1,inp2,result,
